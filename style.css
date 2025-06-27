@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.toTop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    animation: getRight .3s linear 1 forwards;
+    & button {
+        width: 50px;
+        height: 50px;
+        font-size: 17px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background-color: #2c3058;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+}
+
+.fromRight {
+    right: -50px;
+    animation: fromRight .3s linear 1 forwards;
+    opacity: 1;
+}
+
+@keyframes getRight {
+    100% {
+        right: -50px;
+    }
+}
+@keyframes fromRight {
+    100% {
+        right: 50px;
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #141929;
+    & ul {
+        display: flex;
+        justify-content: center;
+        & li {
+            padding: 20px;
+            list-style: none;
+            &:hover {
+                background-color: #2c3058;
+            }
+            & a {
+                font-size: 17px;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.content {
+    margin-top: 100px;
+}
+
+.toUp {
+    animation: goTop 1s linear 1 forwards;
+}
+.toDown {
+    opacity: 0;
+    animation: goDown 1s linear 1 forwards;
+}
+
+@keyframes goDown {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes goTop {
+    100% {
+        top: -100px;
+        opacity: 0;
+    }
+}
